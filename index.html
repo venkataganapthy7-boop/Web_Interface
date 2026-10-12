@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkata Ganapathy | Web Projects Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(23, 31, 48, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(30, 41, 64, 0.95);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #8b5cf6;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --modal-bg: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    header.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(11, 15, 25, 0.85);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .repo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .repo-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #93c5fd;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #3b82f6;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #60a5fa 20%, #c084fc 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* Controls: Search & Category Filter */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 850px;
+      margin: 0 auto 3rem;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.95rem 1rem 0.95rem 3.25rem;
+      background: rgba(23, 31, 48, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+      background: rgba(23, 31, 48, 1);
+    }
+
+    .search-input::placeholder {
+      color: #64748b;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 5rem;
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--card-accent, #3b82f6), transparent);
+      opacity: 0.7;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      background: var(--card-hover);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(59, 130, 246, 0.2);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .card-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+
+    .card-features li {
+      font-size: 0.8125rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-features li::before {
+      content: '✓';
+      color: var(--emerald);
+      font-weight: bold;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .btn-launch {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-launch:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-external {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-external:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      display: none;
+      grid-column: 1 / -1;
+    }
+
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .empty-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Modal Viewer */
+    .preview-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(16px);
+      display: none;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .preview-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-header {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-project-info {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+
+    .modal-project-icon {
+      font-size: 1.5rem;
+    }
+
+    .modal-project-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .modal-project-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .modal-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .device-controls {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+    }
+
+    .device-btn {
+      padding: 0.4rem 0.75rem;
+      border-radius: 7px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .device-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-action-btn {
+      padding: 0.45rem 0.85rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .modal-action-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .modal-close-btn {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(239, 68, 68, 0.3);
+      color: #ffffff;
+    }
+
+    .modal-body {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      overflow: hidden;
+      background: #020617;
+    }
+
+    .iframe-wrapper {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .iframe-wrapper.desktop {
+      max-width: 100%;
+    }
+
+    .iframe-wrapper.tablet {
+      max-width: 768px;
+    }
+
+    .iframe-wrapper.mobile {
+      max-width: 390px;
+    }
+
+    .project-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      background: rgba(11, 15, 25, 0.95);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand">
+        <div class="brand-icon">VG</div>
+        <div class="brand-text">
+          <h1>Venkata Ganapathy</h1>
+          <p>Interactive Web Portfolio & Showcase</p>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="https://github.com/venkataganapthy7-boop/Web_Interface" target="_blank" rel="noopener noreferrer" class="repo-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        10 Interactive Applications Available Live
+      </div>
+      <h1 class="hero-title">
+        Choose a <span>Project</span> to Launch
+      </h1>
+      <p class="hero-desc">
+        A unified showcase of front-end web applications, interactive dashboards, utilities, and developer projects. Click any project card below to test it instantly in the live viewer or open directly in full screen.
+      </p>
+
+      <!-- Controls: Search & Category Filters -->
+      <div class="controls">
+        <div class="search-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search projects by name, features, or technologies (e.g. Attendance, Calculator, Todo)..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="filter-tabs" id="filterContainer">
+          <button class="filter-btn active" data-filter="all">All Projects (10)</button>
+          <button class="filter-btn" data-filter="react">React Apps (8)</button>
+          <button class="filter-btn" data-filter="vanilla">Vanilla JS (2)</button>
+          <button class="filter-btn" data-filter="academic">Academic & Dashboard (4)</button>
+          <button class="filter-btn" data-filter="utility">Utilities & Tools (4)</button>
+          <button class="filter-btn" data-filter="showcase">Showcase & Portfolio (2)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="grid" id="projectsGrid">
+
+      <!-- 1. Attendance Tracker -->
+      <article class="project-card" data-tags="react academic" data-color="#3b82f6" style="--card-accent: #3b82f6;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">📋</div>
+            <span class="card-category">React • Academic</span>
+          </div>
+          <h2 class="card-title">Student Attendance Tracker</h2>
+          <p class="card-desc">
+            Classroom attendance management tool with interactive student roster, real-time status toggling (Present/Absent), and dynamic summary calculations.
+          </p>
+          <ul class="card-features">
+            <li>Interactive 20-student roster list</li>
+            <li>Instant Present / Absent status toggle</li>
+            <li>Real-time attendance metric calculation</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Hooks</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Student Attendance Tracker', '📋', 'projects/attendance-tracker/index.html', 'React • Academic')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/attendance-tracker/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Calculator -->
+      <article class="project-card" data-tags="react utility" data-color="#06b6d4" style="--card-accent: #06b6d4;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">🧮</div>
+            <span class="card-category">React • Utility</span>
+          </div>
+          <h2 class="card-title">Interactive Calculator</h2>
+          <p class="card-desc">
+            Responsive digital arithmetic calculator featuring smooth keypad controls, operator precedence, instant evaluations, and clear actions.
+          </p>
+          <ul class="card-features">
+            <li>Standard arithmetic (+, -, *, /) calculations</li>
+            <li>Responsive grid touch/click keypad layout</li>
+            <li>Error handling & instantaneous result display</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">State</span>
+            <span class="tech-tag">CSS Grid</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Interactive Calculator', '🧮', 'projects/calculator/index.html', 'React • Utility')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/calculator/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Digital Counter App -->
+      <article class="project-card" data-tags="vanilla utility" data-color="#8b5cf6" style="--card-accent: #8b5cf6;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">🔢</div>
+            <span class="card-category">Vanilla JS • Utility</span>
+          </div>
+          <h2 class="card-title">Digital Counter App</h2>
+          <p class="card-desc">
+            Streamlined and lightweight counter utility with clean DOM manipulation for fast counting, decrements, and one-tap resetting.
+          </p>
+          <ul class="card-features">
+            <li>Increment (+1) and Decrement (-1) actions</li>
+            <li>Instant reset to zero</li>
+            <li>Minimalist vanilla JS DOM architecture</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">DOM API</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Digital Counter App', '🔢', 'projects/counter-app/index.html', 'Vanilla JS • Utility')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/counter-app/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Form Validation -->
+      <article class="project-card" data-tags="react utility" data-color="#10b981" style="--card-accent: #10b981;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">📝</div>
+            <span class="card-category">React • Security & Forms</span>
+          </div>
+          <h2 class="card-title">Form Validation Application</h2>
+          <p class="card-desc">
+            Complete registration interface featuring real-time client-side validation rules, password matching, email checks, file attachment, and friendly error alerts.
+          </p>
+          <ul class="card-features">
+            <li>Strict email & phone regex validation</li>
+            <li>Password confirmation & security checks</li>
+            <li>Photo upload support & feedback messaging</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Validation</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Form Validation Application', '📝', 'projects/form-validation/index.html', 'React • Forms')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/form-validation/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Hobbies Showcase -->
+      <article class="project-card" data-tags="react showcase" data-color="#f59e0b" style="--card-accent: #f59e0b;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">🎨</div>
+            <span class="card-category">React • Showcase</span>
+          </div>
+          <h2 class="card-title">Personal Interests & Hobbies</h2>
+          <p class="card-desc">
+            An animated interactive card presentation highlighting personal passions: cricket, music production, software development, and movies.
+          </p>
+          <ul class="card-features">
+            <li>Smooth hover transitions & arrow indicators</li>
+            <li>Curated interest cards with vibrant emojis</li>
+            <li>Responsive card grid with modern styling</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Animations</span>
+            <span class="tech-tag">CSS Flex</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Personal Interests & Hobbies', '🎨', 'projects/hobbies/index.html', 'React • Showcase')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/hobbies/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Personal Portfolio -->
+      <article class="project-card" data-tags="react showcase" data-color="#ec4899" style="--card-accent: #ec4899;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">👨‍💻</div>
+            <span class="card-category">React • Portfolio</span>
+          </div>
+          <h2 class="card-title">Developer Portfolio Website</h2>
+          <p class="card-desc">
+            Personal developer profile for Venkata Ganapathy showcasing cybersecurity expertise, programming languages, completed projects, and a contact gateway.
+          </p>
+          <ul class="card-features">
+            <li>Skill radar: Java, Python, React, Cybersecurity</li>
+            <li>Highlighted project cards with tech tags</li>
+            <li>Dynamic tab navigation & contact form</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">SPA</span>
+            <span class="tech-tag">Cyber Security</span>
+            <span class="tech-tag">Portfolio</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Developer Portfolio Website', '👨‍💻', 'projects/personal-portfolio/index.html', 'React • Portfolio')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/personal-portfolio/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Student Report Card -->
+      <article class="project-card" data-tags="react academic" data-color="#14b8a6" style="--card-accent: #14b8a6;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">📊</div>
+            <span class="card-category">React • Academic</span>
+          </div>
+          <h2 class="card-title">Student Report Card App</h2>
+          <p class="card-desc">
+            Academic scoring calculator processing marks across 5 subjects, generating aggregate totals, calculating percentage, and assessing Pass/Fail condition.
+          </p>
+          <ul class="card-features">
+            <li>Multi-subject input (Tamil, English, Maths, Science, CS)</li>
+            <li>Automatic score aggregation & percentage calculation</li>
+            <li>Instant Pass / Fail status indicator</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Math</span>
+            <span class="tech-tag">Calculators</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Student Report Card App', '📊', 'projects/student-report-card/index.html', 'React • Academic')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/student-report-card/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Student Dashboard -->
+      <article class="project-card" data-tags="react academic" data-color="#6366f1" style="--card-accent: #6366f1;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">🎓</div>
+            <span class="card-category">React • Dashboard</span>
+          </div>
+          <h2 class="card-title">Student Dashboard</h2>
+          <p class="card-desc">
+            Component-based student profile overview tracking enrollment data, department (Cyber Security), semester stats, enrolled courses, and attendance rate.
+          </p>
+          <ul class="card-features">
+            <li>Modular component architecture (Header, Card, Subjects)</li>
+            <li>Subject roster: React, Data Structures, Python, DBMS</li>
+            <li>Attendance progress tracker & department summary</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Components</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Dashboard</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Student Dashboard', '🎓', 'projects/student-dashboard/index.html', 'React • Dashboard')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/student-dashboard/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. Student Profile Card -->
+      <article class="project-card" data-tags="vanilla academic" data-color="#0284c7" style="--card-accent: #0284c7;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">🪪</div>
+            <span class="card-category">Vanilla JS • Academic</span>
+          </div>
+          <h2 class="card-title">Student Profile Badge</h2>
+          <p class="card-desc">
+            Two-stage profile card generator that captures student input, assigns letter grades (A+, A, B+, etc.), creates a letter avatar, and displays a formatted badge.
+          </p>
+          <ul class="card-features">
+            <li>Interactive step switch: Input Form &rarr; Profile Badge</li>
+            <li>Dynamic initial avatar generator with gradient theme</li>
+            <li>Automated grading calculation (A+, A, B+, C, F)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Interactive</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('Student Profile Badge', '🪪', 'projects/student-profile-card/index.html', 'Vanilla JS • Academic')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/student-profile-card/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. To-Do List Application -->
+      <article class="project-card" data-tags="react utility" data-color="#10b981" style="--card-accent: #10b981;">
+        <div>
+          <div class="card-top">
+            <div class="card-icon">✅</div>
+            <span class="card-category">React • Productivity</span>
+          </div>
+          <h2 class="card-title">To-Do List Application</h2>
+          <p class="card-desc">
+            Fast, responsive daily task organizer allowing quick task additions, strike-through completion toggling, and instant item removal.
+          </p>
+          <ul class="card-features">
+            <li>Dynamic task addition with keyboard Enter key support</li>
+            <li>Task completion toggle with strikethrough effect</li>
+            <li>One-click delete and list management</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">State</span>
+            <span class="tech-tag">Productivity</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-launch" onclick="openPreview('To-Do List Application', '✅', 'projects/todo-list/index.html', 'React • Productivity')">
+              ▶ Launch Project
+            </button>
+            <a href="projects/todo-list/index.html" target="_blank" class="btn-external" title="Open in new window">
+              ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Empty Search State -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <h3 class="empty-title">No projects found</h3>
+        <p style="color: var(--text-muted)">Try adjusting your search terms or filter selection.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Interactive Project Viewer Modal -->
+  <div class="preview-modal" id="previewModal">
+    <div class="modal-header">
+      <div class="modal-project-info">
+        <span class="modal-project-icon" id="modalIcon">📋</span>
+        <div>
+          <h3 class="modal-project-title" id="modalTitle">Project Preview</h3>
+          <span class="modal-project-badge" id="modalBadge">Interactive Preview</span>
+        </div>
+      </div>
+
+      <div class="modal-toolbar">
+        <div class="device-controls">
+          <button class="device-btn active" data-device="desktop" onclick="setDevice('desktop')">
+            💻 Desktop
+          </button>
+          <button class="device-btn" data-device="tablet" onclick="setDevice('tablet')">
+            📱 Tablet
+          </button>
+          <button class="device-btn" data-device="mobile" onclick="setDevice('mobile')">
+            📱 Mobile
+          </button>
+        </div>
+
+        <button class="modal-action-btn" onclick="reloadPreview()" title="Reload project frame">
+          🔄 Reload
+        </button>
+        <a href="#" target="_blank" class="modal-action-btn" id="modalExternalLink" title="Open full screen in new tab">
+          ↗ New Tab
+        </a>
+        <button class="modal-action-btn modal-close-btn" onclick="closePreview()" title="Close viewer and return to Hub">
+          ✕ Back to Hub
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="iframe-wrapper desktop" id="iframeWrapper">
+        <iframe src="" class="project-iframe" id="projectIframe" title="Project Live Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>
+        <strong>Web Projects Showcase</strong> • Created by <strong>Venkata Ganapathy P</strong>
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/venkataganapthy7-boop/Web_Interface" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        <span>•</span>
+        <a href="#projectsGrid">Browse Projects</a>
+        <span>•</span>
+        <a href="projects/personal-portfolio/index.html" target="_blank">Personal Portfolio</a>
+      </div>
+      <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">
+        Deployed with GitHub Pages • React, Vite, JavaScript, HTML5 & CSS3
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive Logic -->
+  <script>
+    // Search & Filter state
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const emptyState = document.getElementById('emptyState');
+
+    let currentFilter = 'all';
+
+    function filterProjects() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+        const techTags = Array.from(card.querySelectorAll('.tech-tag')).map(t => t.textContent.toLowerCase()).join(' ');
+
+        const matchesQuery = !query || title.includes(query) || desc.includes(query) || tags.includes(query) || techTags.includes(query);
+        const matchesCategory = currentFilter === 'all' || tags.includes(currentFilter);
+
+        if (matchesQuery && matchesCategory) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterProjects);
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        filterProjects();
+      });
+    });
+
+    // Preview Modal Logic
+    const modal = document.getElementById('previewModal');
+    const iframe = document.getElementById('projectIframe');
+    const iframeWrapper = document.getElementById('iframeWrapper');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalBadge = document.getElementById('modalBadge');
+    const modalExternalLink = document.getElementById('modalExternalLink');
+    const deviceButtons = document.querySelectorAll('.device-btn');
+
+    function openPreview(title, icon, url, badge) {
+      modalTitle.textContent = title;
+      modalIcon.textContent = icon;
+      modalBadge.textContent = badge;
+      modalExternalLink.href = url;
+      iframe.src = url;
+      
+      // Reset device mode to desktop
+      setDevice('desktop');
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreview() {
+      modal.classList.remove('active');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    function reloadPreview() {
+      if (iframe.src) {
+        iframe.src = iframe.src;
+      }
+    }
+
+    function setDevice(device) {
+      deviceButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-device') === device);
+      });
+      iframeWrapper.className = `iframe-wrapper ${device}`;
+    }
+
+    // Keyboard support: Escape closes modal, / focuses search
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closePreview();
+      } else if (e.key === '/' && document.activeElement !== searchInput && !modal.classList.contains('active')) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+
+    // Close on backdrop click outside wrapper
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('modal-body')) {
+        closePreview();
+      }
+    });
+  </script>
+</body>
+</html>

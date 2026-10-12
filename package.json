@@ -1,0 +1,11 @@
+{
+  "name": "web-projects-showcase",
+  "version": "1.0.0",
+  "description": "Multi-project interactive web showcase by Venkata Ganapathy P featuring 10 web applications in React, Vite, and JavaScript.",
+  "scripts": {
+    "build": "node build-all.js",
+    "preview": "npx serve ."
+  },
+  "author": "Venkata Ganapathy P",
+  "license": "MIT"
+}
